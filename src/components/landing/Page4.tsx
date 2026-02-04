@@ -122,7 +122,7 @@ import { Container, Grid, Badge, Title, Text, Divider, Image } from "@mantine/co
 export default function MarketingSection() {
   return (
     <section className="bg-gradient-to-b from-black via-zinc-950 to-black text-white py-20">
-      <Container size="lg">
+      <Container size="sm">
         {/* Top heading */}
         <Title
           order={1}
