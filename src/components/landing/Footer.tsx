@@ -38,19 +38,19 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500">Menu</h4>
             <div className="space-y-2 text-sm">
-              <a href="#" className="block text-gray-400 transition-colors hover:text-white">
+              <a href="#" className="block text-white transition-colors hover:text-white">
                 SERVICES
               </a>
-              <a href="#" className="block text-gray-400 transition-colors hover:text-white">
+              <a href="#" className="block text-white transition-colors hover:text-white">
                 OUR APPROACH
               </a>
-              <a href="#" className="block text-gray-400 transition-colors hover:text-white">
+              <a href="#" className="block text-white transition-colors hover:text-white">
                 PROJECTS
               </a>
-              <a href="#" className="block text-gray-400 transition-colors hover:text-white">
+              <a href="#" className="block text-white transition-colors hover:text-white">
                 ABOUT US
               </a>
-              <a href="#" className="block text-gray-400 transition-colors hover:text-white">
+              <a href="#" className="block text-white transition-colors hover:text-white">
                 BLOG
               </a>
             </div>
@@ -60,19 +60,20 @@ const Footer = () => {
           <div className="space-y-4">
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500">Local Time</h4>
-              <p className="text-sm text-gray-400">4:15 PM UTC+2</p>
+              <p className="text-sm text-white">4:15 PM UTC+2</p>
             </div>
-            <div>
+           
+          </div>
+          <div className='space-y-2'>
+             <div>
               <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-500">Version</h4>
-              <p className="text-sm text-gray-400">2026 @ Edition</p>
+              <p className="text-sm text-white">2026 @ Edition</p>
             </div>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 border-t border-slate-800 pt-8 text-center text-sm text-gray-500">
-          <p>&copy; 2026 Tech Abyss. All rights reserved.</p>
-        </div>
+       
       </div>
     </footer>
   )

@@ -9,7 +9,7 @@ const CallToAction = () => {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center justify-between gap-8 rounded-lg border border-slate-800 bg-black p-8 sm:flex-row sm:p-12">
           <div>
-            <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl">
+            <h2 className="text-6xl font-bold leading-tight text-white sm:text-6xl">
               Let's Connect!
             </h2>
           </div>
