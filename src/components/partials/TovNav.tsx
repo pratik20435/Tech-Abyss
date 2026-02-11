@@ -63,7 +63,7 @@ const VerticalNavbar = () => {
   const [active, setActive] = useState("Overview");
 
   return (
-    <nav className="sticky top-0 h-screen w-64 bg-black">
+    <nav className="fixed top-0 left-0 h-screen w-64 bg-black z-50">
       <ul className="flex flex-col gap-8 px-8 py-10 text-white text-sm font-medium">
         {navItems.map((item) => (
           <li

@@ -1,37 +1,27 @@
 import './App.css'
-import CallToAction from './components/landing/CalltoAction'
-import Footer from './components/landing/Footer'
-import IntroSection from './components/landing/Introsection'
-import TechAbyss from './components/landing/HeroSection'
-import FullStackSection from './components/landing/CustomerSatisfaction'
-import ServicesSection from './components/landing/ConsultingService'
-import MarketingSection from './components/landing/PerformanceMarketing'
-// import { HeroSection } from './components/landing/HeroSection'
-import Logo from './components/partials/Logo'
-import { Header } from './components/partials/TopHeader'
-import Navbar from './components/partials/TovNav'
-// import TopHeader from './components/partials/TopHeader'
-import { MantineProvider } from "@mantine/core";
-import "@mantine/core/styles.css";
+import { Routes, Route } from 'react-router-dom'
+import { MantineProvider } from "@mantine/core"
+import "@mantine/core/styles.css"
+import Layout from './components/shared/Layout'
+import Home from './pages/Home'
+import Terms from './pages/Terms'
+import Privacy from './pages/Privacy'
+import NotFound from './pages/NotFound'
+import Error from './pages/Error'
+
 function App() {
-
   return (
-    <>
     <MantineProvider defaultColorScheme="dark">
-   {/* <Logo/> */}
-   {/* <Navbar/> */}
-   {/* <Header/> */}
-   <TechAbyss/>
-   <FullStackSection/>
-   <ServicesSection/>
-   {/* <ServiceSection2/> */}
-   <MarketingSection/>
-   <IntroSection/>
-   <CallToAction/>
-   <Footer/>
-
-   </MantineProvider>
-   </>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="terms" element={<Terms />} />
+          <Route path="privacy" element={<Privacy />} />
+          <Route path="error" element={<Error />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </MantineProvider>
   )
 }
 

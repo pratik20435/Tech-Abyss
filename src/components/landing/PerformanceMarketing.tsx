@@ -1,259 +1,118 @@
-// // import { Badge, Container, SimpleGrid } from "@mantine/core";
-// // // import laptop from "../../assets/laptop.png";
+"use client";
 
-// // export default function Home() {
-// //   return (
-// //     <main className="min-h-screen bg-background text-foreground">
-// //       {/* Header */}
-// //       <section className="border-b border-border/20 py-16">
-// //         <Container size="lg">
-// //           <h1 className="text-balance text-4xl font-bold leading-tight md:text-5xl">
-// //             Best With Organizations And Teams That Need Complete Web
-// //             Applications Built From Scratch Or Enhanced
-// //           </h1>
-// //         </Container>
-// //       </section>
-
-// //       {/* Main Content */}
-// //       <section className="py-16">
-// //         <Container size="lg">
-// //           <SimpleGrid
-// //             cols={{ base: 1, md: 2 }}
-// //             spacing="xl"
-// //             verticalSpacing="xl"
-// //           >
-// //             {/* Image */}
-// //             <div className="flex items-center justify-center">
-// //               <div className="relative w-full max-w-md overflow-hidden rounded-lg">
-// //                 {/* <img
-// //                   src={laptop}
-// //                   alt="Person working on laptop at desk"
-// //                   width={400}
-// //                   height={500}
-// //                   className="h-auto w-full object-cover"
-// //                 /> */}
-// //               </div>
-// //             </div>
-
-// //             {/* Content */}
-// //             <div className="flex flex-col justify-center space-y-6">
-// //               <Badge
-// //                 variant="light"
-// //                 size="lg"
-// //                 className="w-fit bg-muted/50 text-foreground"
-// //               >
-// //                 Performance Marketing
-// //               </Badge>
-
-// //               <div>
-// //                 <h2 className="text-balance text-3xl font-bold leading-tight md:text-4xl">
-// //                   Growing Businesses Needing Complete Web Applications
-// //                 </h2>
-// //               </div>
-
-// //               <p className="text-lg leading-relaxed text-muted-foreground">
-// //                 You Need A Full-Stack Web Application Built From Frontend To
-// //                 Backend. You Need Someone Who Can Build The Entire System—User
-// //                 Interfaces, APIs, Databases, And Infrastructure. I Help You
-// //                 Build Scalable, Maintainable Applications That Grow With Your
-// //                 Business.
-// //               </p>
-// //             </div>
-// //           </SimpleGrid>
-// //         </Container>
-// //       </section>
-// //     </main>
-// //   );
-// // }
-// import { Badge, Container, Divider, Text, Title } from "@mantine/core";
-
-// export default function ServiceSection2() {
-//   return (
-//     <section className="bg-gradient-to-b from-black to-neutral-900 text-white py-24">
-//       <Container size="lg">
-//         {/* Heading */}
-//         <Title order={1} className="text-center text-4xl md:text-5xl font-semibold">
-//           Best With Organizations And Teams That Need Complete
-//           <br className="hidden md:block" />
-//           Web Applications Built From Scratch Or Enhanced
-//         </Title>
-
-//         <Divider my="xl" className="border-neutral-700" />
-
-//         {/* Content */}
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-center mt-12">
-//           {/* Image */}
-//           <div className="rounded-xl overflow-hidden shadow-2xl">
-//             <img
-//               src="/laptop.png"
-//               alt="Working on laptop"
-//               className="w-full h-full object-cover"
-//             />
-//           </div>
-
-//           {/* Text Content */}
-//           <div>
-//             <Badge
-//               radius="sm"
-//               size="lg"
-//               className="bg-neutral-800 text-neutral-200 mb-6"
-//             >
-//               Performance Marketing
-//             </Badge>
-
-//             <Title order={2} className="text-3xl md:text-4xl mb-6">
-//               Growing Businesses Needing Complete Web Applications
-//             </Title>
-
-//             <Text size="md" className="text-neutral-300 leading-relaxed">
-//               You need a full-stack web application built from frontend to
-//               backend. You need someone who can build the entire system—user
-//               interfaces, APIs, databases, and infrastructure. I help you build
-//               scalable, maintainable applications that grow with your business.
-//             </Text>
-//           </div>
-//         </div>
-//       </Container>
-//     </section>
-//   );
-// }
-import { Container, Grid, Badge, Title, Text, Divider, Image } from "@mantine/core";
+import { motion } from "framer-motion";
+import { Badge } from "@mantine/core";
+import { staggerContainer, staggerItem } from "../../utils/animations";
 
 export default function MarketingSection() {
+  const services = [
+    {
+      badge: "Performance Marketing",
+      title: "Data-Driven Marketing Solutions",
+      description:
+        "Leverage analytics and insights to optimize your marketing campaigns. From SEO to paid advertising, we help you reach your target audience effectively.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    },
+    {
+      badge: "Digital Strategy",
+      title: "Strategic Digital Transformation",
+      description:
+        "Transform your business with comprehensive digital strategies. We help you navigate the digital landscape and stay ahead of the competition.",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    },
+    {
+      badge: "Brand Development",
+      title: "Building Strong Brand Identity",
+      description:
+        "Create a memorable brand that resonates with your audience. From visual identity to messaging, we craft brands that stand out.",
+      image:
+        "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80",
+    },
+  ];
+
   return (
-    <section className="bg-gradient-to-b from-black via-zinc-950 to-black text-white py-20">
-      <Container size="sm">
+    <section
+      id="projects"
+      className="bg-gradient-to-b from-black via-zinc-950 to-black text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
+    >
+      <div className="px-44">
+        {/* <div className="max-w-7xl mx-auto "> */}
         {/* Top heading */}
-        <Title
-          order={1}
-          className="text-center text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight"
+        <motion.h1
+          className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bricolage leading-tight mb-8 sm:mb-12 lg:mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
         >
           Best With Organizations And Teams That Need Complete
           <br className="hidden sm:block" />
           Web Applications Built From Scratch Or Enhanced
-        </Title>
+        </motion.h1>
 
-        <Divider my="xl" className="opacity-30" />
+        <div className="h-px bg-white/10 mb-12 sm:mb-16 lg:mb-20" />
 
-        {/* Content */}
-        <Grid align="center" gutter="xl">
-          {/* Image */}
-          <Grid.Col span={{ base: 12, md: 7 }}>
-            <div className="overflow-hidden rounded-xl shadow-2xl">
-              <Image
-                src="/laptop.png"
-                alt="Developer working on laptop"
-                radius="xs"
-                className="w-full h-10px object-cover"
-              />
-            </div>
-          </Grid.Col>
-
-          {/* Text content */}
-          <Grid.Col span={{ base: 12, md: 5 }}>
-            <div className="space-y-5">
-              <Badge
-                radius="sm"
-                variant="light"
-                color="gray"
-                className="bg-white/10 text-white"
+        {/* Services */}
+        <motion.div
+          className="space-y-16 sm:space-y-20 lg:space-y-24"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              variants={staggerItem}
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center ${
+                index % 2 === 1 ? "lg:flex-row-reverse" : ""
+              }`}
+            >
+              {/* Image */}
+              <div
+                className={`flex ${index % 2 === 1 ? "lg:order-2 justify-start" : "justify-end"}`}
               >
-                Performance Marketing
-              </Badge>
+                <motion.div
+                  className="w-full max-w-[460px] h-full max-h-[360px] overflow-hidden rounded-xl shadow-2xl aspect-square bg-gray-900 ml:100"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              </div>
 
-              <Title order={2} className="text-2xl md:text-3xl font-semibold">
-                Growing Businesses Needing Complete Web Applications
-              </Title>
-
-              <Text className="text-zinc-300 leading-relaxed">
-                You need a full‑stack web application built from frontend to
-                backend. You need someone who can build the entire system—user
-                interfaces, APIs, databases, and infrastructure. I help you
-                build scalable, maintainable applications that grow with your
-                business.
-              </Text>
-            </div>
-          </Grid.Col>
-        </Grid>
-            <Grid align="center" gutter="xl">
-          {/* Image */}
-          <Grid.Col span={{ base: 12, md: 7 }}>
-            <div className="overflow-hidden rounded-2xl shadow-2xl">
-              <Image
-                src="/laptop2.png"
-                alt="Developer working on laptop"
-                radius="xs"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </Grid.Col>
-
-          {/* Text content */}
-          <Grid.Col span={{ base: 12, md: 5 }}>
-            <div className="space-y-5">
-              <Badge
-                radius="sm"
-                variant="light"
-                color="gray"
-                className="bg-white/10 text-white"
+              {/* Text content */}
+              <div
+                className={`space-y-4 sm:space-y-6 ${index % 2 === 1 ? "lg:order-1" : ""}`}
               >
-                Performance Marketing
-              </Badge>
+                <Badge
+                  radius="sm"
+                  variant="light"
+                  color="gray"
+                  className="bg-zinc-800/50 text-white/70 px-4 py-1"
+                  size="lg"
+                >
+                  {service.badge}
+                </Badge>
 
-              <Title order={2} className="text-2xl md:text-3xl font-semibold">
-                Growing Businesses Needing Complete Web Applications
-              </Title>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-inter leading-tight">
+                  {service.title}
+                </h2>
 
-              <Text className="text-zinc-300 leading-relaxed">
-                You need a full‑stack web application built from frontend to
-                backend. You need someone who can build the entire system—user
-                interfaces, APIs, databases, and infrastructure. I help you
-                build scalable, maintainable applications that grow with your
-                business.
-              </Text>
-            </div>
-          </Grid.Col>
-        </Grid>
-            <Grid align="center" gutter="xl">
-          {/* Image */}
-          <Grid.Col span={{ base: 12, md: 7 }}>
-            <div className="overflow-hidden rounded-2xl shadow-2xl">
-              <Image
-                src="/laptop3.png"
-                alt="Developer working on laptop"
-                radius="2px"
-                className="w-451px h-364px  object-cover"
-              />
-            </div>
-          </Grid.Col>
-
-          {/* Text content */}
-          <Grid.Col span={{ base: 12, md: 5 }}>
-            <div className="space-y-5">
-              <Badge
-                radius="sm"
-                variant="light"
-                color="gray"
-                className="bg-white/10 text-white"
-              >
-                Performance Marketing
-              </Badge>
-
-              <Title order={2} className="text-2xl md:text-3xl font-semibold">
-                Growing Businesses Needing Complete Web Applications
-              </Title>
-
-              <Text className="text-zinc-300 leading-relaxed">
-                You need a full‑stack web application built from frontend to
-                backend. You need someone who can build the entire system—user
-                interfaces, APIs, databases, and infrastructure. I help you
-                build scalable, maintainable applications that grow with your
-                business.
-              </Text>
-            </div>
-          </Grid.Col>
-        </Grid>
-      </Container>
+                <p className="text-zinc-400 leading-relaxed text-base sm:text-lg max-w-xl font-inter">
+                  {service.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 }
